@@ -1,4 +1,6 @@
 /learn_source/
+/test/02tensorboard_logs/
+/test/MNIST/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm
