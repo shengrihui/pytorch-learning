@@ -17,7 +17,7 @@ input_size = 1
 batch_size = 1
 hidden_size = 5
 num_layers = 2
-lr = 0.002
+lr = 0.0002
 # 输入前40个点，预测后10个
 pred_len = 10
 data_len = 50
@@ -61,7 +61,7 @@ def train():
         start = np.random.randint(0, 3, 1)
         data_x = np.linspace(start, start + data_len, data_len)
         data_y = np.sin(data_x)
-        inputs = torch.tensor(data_x[:input_len]).float().view(input_len, batch_size, 1)
+        inputs = torch.tensor(data_y[:input_len]).float().view(input_len, batch_size, 1)
         labels = torch.tensor(data_y[input_len:]).float().view(pred_len, batch_size, 1)
         
         optimizer.zero_grad()
@@ -89,7 +89,7 @@ def pred():
         net.load_state_dict(torch.load('12RNN_05_sin(x).pth'))
     else:
         train()
-    start = 100
+    start = 2
     data_x = np.linspace(start, start + data_len, data_len)
     data_y = np.sin(data_x)
     plt.plot(data_x, data_y, color='blue')
@@ -101,5 +101,5 @@ def pred():
 
 
 if __name__ == '__main__':
-    # train()
+    train()
     pred()
