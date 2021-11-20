@@ -48,10 +48,12 @@ x_one_hot = [one_hot_lookup[x] for x in x_data]
 inputs = torch.Tensor(x_one_hot).view(seq_len, batch_size, input_size)
 labels = torch.LongTensor(y_data).view(seq_len, -1)
 
+
 def out2str(out):
-    _,idx=torch.max(out,2)
-    s=[idx2char[i[0]] for i in idx]
+    _, idx = torch.max(out, 2)
+    s = [idx2char[i[0]] for i in idx]
     return ''.join(s)
+
 
 # train
 for epoch in range(50):
@@ -63,7 +65,6 @@ for epoch in range(50):
     # loss=criterion(outputs,labels)
     loss.backward()
     optimizer.step()
-    ret=out2str(outputs)
+    ret = out2str(outputs)
     print(f'epoch:{epoch}  loss:{loss.item():.6f}  {ret}')
-    #exit(0)
-
+    # exit(0)

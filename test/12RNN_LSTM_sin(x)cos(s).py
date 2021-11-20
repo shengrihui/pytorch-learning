@@ -92,7 +92,7 @@ def train():
         inputs, labels = inputs.to(device), labels.to(device)
         h, c = net.init_h_c()
         h, c = h.to(device), c.to(device)
-        print(inputs.shape,h.shape)
+        print(inputs.shape, h.shape)
         exit(0)
         optimizer.zero_grad()
         out = net(inputs, (h, c))
@@ -134,4 +134,4 @@ def pred(start=20):
 
 if __name__ == '__main__':
     train()
-    #pred(500)
+    # pred(500)

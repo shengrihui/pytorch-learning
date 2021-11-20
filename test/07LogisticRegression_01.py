@@ -40,7 +40,7 @@ loss_list = []
 for epoch in range(Epoch):
     y_pred = model(x_data)
     loss = criterion(y_pred, y_data)
-    print(y_pred,y_data)
+    print(y_pred, y_data)
     loss_list.append(loss.item())
     print(epoch, round(loss.item(), 2))
     
@@ -63,23 +63,3 @@ plt.plot([0, 10], [0.5, 0.5], c='r')
 plt.grid()
 
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

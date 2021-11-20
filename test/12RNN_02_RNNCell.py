@@ -51,6 +51,8 @@ inputs = torch.Tensor(x_one_hot).view(-1, batch_size, input_size)
 # torch.Size([5, 1, 4])
 
 labels = torch.LongTensor(y_data).view(-1, 1)
+
+
 # print(labels)
 # print(labels.shape)
 # tensor([[3],
@@ -94,6 +96,3 @@ for epoch in range(15):
     loss.backward()
     optimizer.step()
     print(f"  epoch:{epoch + 1},loss:{loss.item()}")
-
-
-

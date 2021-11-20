@@ -38,7 +38,7 @@ for idx, input in enumerate(dataset):
     print('=' * 20, idx, '=' * 20)
     print('input :', input)
     print('input size:', input.shape)
-
+    
     # input=(batch_size,input_size)
     # -> (batch_size,hidden_size)
     # +
